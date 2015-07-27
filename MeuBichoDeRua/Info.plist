@@ -18,10 +18,27 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1428027397490865</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>7</string>
+	<key>FacebookAppID</key>
+	<string>1428027397490865</string>
+	<key>FacebookDisplayName</key>
+	<string>Meu Bicho de Rua</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Localização necessária para visualizar e cadastrar animais próximos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Localização necessária para visualizar e cadastrar animais próximos</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -43,22 +60,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>1428027397490865</string>
-	<key>FacebookDisplayName</key>
-	<string>Meu Bicho de Rua</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Oi</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>dan</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1428027397490865</string>
-			</array>
-		</dict>
-	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

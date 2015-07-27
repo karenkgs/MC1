@@ -8,8 +8,11 @@
 
 #import "LoginViewController.h"
 #import "MapViewController.h"
+#import "UsuarioSingleton.h"
 
-@interface LoginViewController ()
+@interface LoginViewController (){
+    NSString *usuario;
+}
 
 @end
 
@@ -18,12 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationItem hidesBackButton];
-    
     [self toggleHiddenState:YES];
     self.loginStatusLabel.text = @"";
     
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
+    
+    [[UIView appearanceWhenContainedIn:[UITabBar class], nil] setTintColor: [UIColor colorWithRed:189.0/255.0
+                                                                                            green:210.0/255.0
+                                                                                             blue:210.0/255.0
+                                                                                            alpha:1]];
+    
+    
+//    [[UITabBar appearance]
+//     setBarTintColor:
+//     [UIColor
+//      colorWithRed:236.0/255.0
+//      green:211.0/255.0
+//      blue:195.0/255.0
+//      alpha:0.2]];
+    
     
 
 }
@@ -40,6 +56,7 @@
         // try to open session with existing valid token
         NSArray *permissions = [[NSArray alloc] initWithObjects:
                                 @"user_likes",
+                                @"email",
                                 @"read_stream",
                                 @"publish_actions",
                                 nil];
@@ -69,6 +86,18 @@
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
     NSLog(@"%@", user);
+    
+    UsuarioSingleton* singleton = [UsuarioSingleton sharedInstance];
+    
+    singleton.username = user.name;
+    singleton.user = [user objectForKey:@"email"];
+    singleton.userFirstName = user.first_name;
+    singleton.userLastName = user.last_name;
+    
+    //[UsuarioSingleton sharedInstance].user = [user objectForKey:@"email"];
+    //[UsuarioSingleton sharedInstance].username = [user.name];
+    
+    usuario = user.name;
     self.profilePicture.profileID = user.objectID;
     self.userNameLabel.text = user.name;
     self.emailLabel.text = [user objectForKey:@"email"];
@@ -77,7 +106,7 @@
 }
 
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
-    self.loginStatusLabel.text = @"You are logged out";
+    self.loginStatusLabel.text = @"Você não está logado!";
     
     [self toggleHiddenState:YES];
     
@@ -89,5 +118,8 @@
     NSLog(@"%@", [error localizedDescription]);
 }
 
+-(void)logout{
+    [FBSession.activeSession closeAndClearTokenInformation];
+}
 
 @end

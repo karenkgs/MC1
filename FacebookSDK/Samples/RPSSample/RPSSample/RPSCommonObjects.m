@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#import <UIKit/UIKit.h>
+
 NSString *builtInOpenGraphObjects[3] = {
                                         @"672839339475385",      // rock
                                         @"296430467206197",      // paper

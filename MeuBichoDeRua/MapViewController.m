@@ -9,7 +9,14 @@
 #import "MapViewController.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "AnimalDetailViewController.h"
+#import "AnimalMKPointAnnotation.h"
+#import "AnimalViewController.h"
+
 @interface MapViewController ()
+{
+    BOOL zoomInUser;
+}
 
 @end
 
@@ -20,17 +27,12 @@
     [super viewDidLoad];
     
     
+    self.navigationController.tabBarItem.selectedImage = [[UIImage imageNamed: @"pinDogSelected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    [self.navigationItem setHidesBackButton:YES];
+    self.navigationController.tabBarItem.image = [[UIImage imageNamed:@"pinDog.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-   self.mapView.showsUserLocation = YES;
     
-   // UILongPressGestureRecognizer *toqueLongoMapa =
-    //[[UILongPressGestureRecognizer alloc] initWithTarget:self
-    //                                              action:@selector(adicionaPinoDoBanco:)];
-    //toqueLongoMapa.minimumPressDuration = 0.2;
-  //  [self.mapView addGestureRecognizer:toqueLongoMapa];
-    
+    self.mapView.showsUserLocation = YES;
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -40,6 +42,7 @@
         [self.locationManager requestWhenInUseAuthorization];
         [self.locationManager requestAlwaysAuthorization];
     }
+    
 #endif
     [self.locationManager startUpdatingLocation];
     
@@ -48,14 +51,16 @@
     [self.mapView setZoomEnabled:YES];
     [self.mapView setScrollEnabled:YES];
     
-   
+    
 }
+
 
 
 -(void) adicionaPinoDoBanco
 {
     NSMutableArray *animais = [NSMutableArray array];
     PFQuery *query = [PFQuery queryWithClassName:@"Animal"];
+    [query whereKey:@"status" equalTo:@YES];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(! error)
         {
@@ -64,9 +69,23 @@
             {
                 PFGeoPoint *pf = animal[@"location"];
                 CLLocationCoordinate2D coordenadas = CLLocationCoordinate2DMake(pf.latitude, pf.longitude);
-                MKPointAnnotation *pino = [[MKPointAnnotation alloc] init];
+                AnimalMKPointAnnotation *pino = [[AnimalMKPointAnnotation alloc] init];
                 pino.coordinate = coordenadas;
-               // pino.image = [UIImage imageNamed:@"pinDog.png"];
+                
+                Animal *a = [[Animal alloc]init];
+                a.especie = animal[@"specie"];
+                a.genero = animal[@"gender"];
+                a.size = animal[@"size"];
+                a.age = animal[@"age"];
+                a.owner = animal[@"owner"];
+                a.situation = animal[@"situation"];
+                a.imageFile = [animal objectForKey:@"photo"];
+                a.date = [animal updatedAt];
+                a.animalId = [animal objectId];
+                
+                pino.animalMk = a;
+                
+                pino.title = animal[@"specie"];
                 [self.mapView addAnnotation:pino];
             }
             
@@ -77,7 +96,7 @@
         }
         
     }];
-
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -89,24 +108,39 @@
     NSLog(@"%@", [self deviceLocation]);
     
     //View Area
-    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = self.locationManager.location.coordinate.latitude;
-    region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.longitudeDelta = 0.005f;
-    region.span.longitudeDelta = 0.005f;
-    [self.mapView setRegion:region animated:YES];
     
     
+    NSArray *a = self.mapView.annotations;
+    [self.mapView removeAnnotations: a];
     [self adicionaPinoDoBanco];
     
+    
 }
+
+
+- (IBAction)listarAnimais:(id)sender {
+    [self performSegueWithIdentifier:@"lista" sender:self];
+}
+
+
+//quando clica no pino abre balao
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *) pino
 {
     NSLog(@"Pino %@ selecionado", pino);
-   [self performSegueWithIdentifier:@"showDetail" sender:self];
+    //AnimalMKPointAnnotation *animalMK  =  pino.annotation;
+    // self.selectedAnimal = animalMK.animalMk;
 }
 
+//quando clica no balao
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    AnimalMKPointAnnotation *animalMK  =  view.annotation;
+    [self performSegueWithIdentifier:@"detail" sender:animalMK.animalMk];
+}
+
+//personaliza o pino
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -125,11 +159,20 @@
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             //pinView.animatesDrop = YES;
             pinView.canShowCallout = YES;
-            pinView.image = [UIImage imageNamed:@"pinDog.png"];
-            pinView.calloutOffset = CGPointMake(0, 32);
+            pinView.image = [UIImage imageNamed:@"pinDogSelected.png"];
+            pinView.calloutOffset = CGPointMake(0, 5);
+            UIButton * detailView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            pinView.rightCalloutAccessoryView = detailView;
+            pinView.frame = CGRectMake(0, 0, 32, 45);
+            //igor
+            pinView.centerOffset = CGPointMake(0, -(pinView.image.size.height)/2);
         } else {
             pinView.annotation = annotation;
         }
+        
+        
+        
+        
         return pinView;
     }
     return nil;
@@ -138,8 +181,17 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    if(!zoomInUser)
+    {
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+        
+        [self.mapView setRegion:region animated:YES];
+        
+        zoomInUser = YES;
+    }
+    
+    
+    //[self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 - (NSString *)deviceLocation {
     return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
@@ -157,11 +209,10 @@
 
 -(void) mapView:(MKMapView *)mapView
 didAddAnnotationViews:(NSArray *)views {
-    MKAnnotationView *v = [views objectAtIndex:0];
-    CLLocationDistance distancia = 400;
-    MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(
-                                                                   [v.annotation coordinate], distancia, distancia);
-    [self.mapView setRegion:regiao animated:YES];
+    //MKAnnotationView *v = [views objectAtIndex:0];
+    //CLLocationDistance distancia = 400;
+    //MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance([v.annotation coordinate], distancia, distancia);
+    //[self.mapView setRegion:regiao animated:YES];
     
 }
 
@@ -174,7 +225,14 @@ didAddAnnotationViews:(NSArray *)views {
     
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"detail"]){
+        
+        ((AnimalDetailViewController *)segue.destinationViewController).animal = sender;
+        
+    }
+    
+}
 
 
 @end

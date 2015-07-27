@@ -20,6 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mapButton;
 
 -(void)toggleHiddenState:(BOOL)shouldHide;
-
+-(void)logout;
 @end
 

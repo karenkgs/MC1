@@ -12,11 +12,8 @@
 @interface SiginDogViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (weak, nonatomic) IBOutlet UIButton *takePhoto;
-
 @property (weak, nonatomic) IBOutlet UIButton *selectPhoto;
-
 
 - (IBAction)takePhoto:  (UIButton *)sender;
 - (IBAction)selectPhoto:(UIButton *)sender;

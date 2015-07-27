@@ -7,7 +7,7 @@
 //
 
 #import "SiginDogViewController.h"
-#import "DogDataViewController.h"
+#import "AnimalDataViewController.h"
 
 @interface SiginDogViewController ()
 
@@ -20,21 +20,26 @@
     [super viewDidLoad];
     
     
+    self.tabBarItem.selectedImage = [[UIImage imageNamed: @"CadastrarSelected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    self.tabBarItem.image = [[UIImage imageNamed:@"Cadastrar.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
     [self.takePhoto.layer setBorderWidth: 1.0f];
     [self.takePhoto.layer setBorderColor:[[UIColor
-                                           colorWithRed:116.0/255.0
-                                           green:159.0/255.0
-                                           blue:160.0/255.0
+                                           colorWithRed:231.0/255.0
+                                           green:201.0/255.0
+                                           blue:183.0/255.0
                                            alpha:1]
                                           CGColor]];
     
     [self.selectPhoto.layer setBorderWidth:1.0f];
     [self.selectPhoto.layer setBorderColor:[[UIColor
-                                           colorWithRed:116.0/255.0
-                                           green:159.0/255.0
-                                           blue:160.0/255.0
-                                           alpha:1]
-                                          CGColor]];
+                                             colorWithRed:231.0/255.0
+                                             green:201.0/255.0
+                                             blue:183.0/255.0
+                                             alpha:1]
+                                            CGColor]];
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
@@ -46,13 +51,13 @@
         
         [myAlertView show];
     }
-
+    
     
     
 }
-    
+
 - (IBAction)takePhoto:(UIButton *)sender {
-        
+    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
@@ -63,21 +68,18 @@
     
     
 }
-    
+
 - (IBAction)selectPhoto:(UIButton *)sender {
-        
+    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-        
-    [self presentViewController:picker animated:YES completion:NULL];
-        
-        
-}
-
     
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
 
 #pragma mark - Image Picker Controller delegate methods
 
@@ -86,9 +88,9 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
     
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-    [self performSegueWithIdentifier: @"ok" sender: self];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier: @"ok" sender: self];
+    }];
     
 }
 
@@ -96,17 +98,16 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"ok"]){
-        [(DogDataViewController*)segue.destinationViewController setHue:self.imageView.image];
+        
+        
+        UINavigationController *nav = (UINavigationController*) segue.destinationViewController;
+        
+        [(AnimalDataViewController*)nav.viewControllers[0] setImagem:self.imageView.image];
+        self.imageView.image = [UIImage imageNamed: @"fundo.png"];
     }
 }
 

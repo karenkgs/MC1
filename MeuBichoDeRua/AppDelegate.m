@@ -17,6 +17,10 @@
 
 NSString *const BFTaskMultipleExceptionsException = @"BFMultipleExceptionsException";
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -25,6 +29,34 @@ NSString *const BFTaskMultipleExceptionsException = @"BFMultipleExceptionsExcept
     
     [Parse setApplicationId:@"tg9OpnigGYXiSyg6Ubed72NdaFnikGyV12jw9mb7"
                   clientKey:@"ONhhVpU3DXSbHWlPQNYSAJ8rGaamdetKCDE4oc5s"];
+    
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+  //  [Parse enableLocalDatastore];
+    
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor
+                                                                                         colorWithRed:116.0/255.0
+                                                                                         green:159.0/255.0 blue:160.0/255.0
+                                                                                         alpha:1]}
+                                             forState:UIControlStateNormal];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor
+                                                                                          colorWithRed:92.0/255.0
+                                                                                          green:162.0/255.0
+                                                                                          blue:157.0/255.0
+                                                                                          alpha:1]}
+                                             forState:UIControlStateSelected];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:65.0/255.0 green:54.0/255.0 blue:49.0/255.0 alpha:1]];
+    [[UITabBar appearance] setTranslucent: NO];
+    
+   // [[UINavigationBar appearance] setBackgroundColor: [UIColor colorWithRed:72.0/255.0 green:61.0/255.0 blue:56.0/255.0 alpha:1]];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:65.0/255.0 green:54.0/255.0 blue:49.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setTranslucent: NO];
+    
     
     return YES;
 }

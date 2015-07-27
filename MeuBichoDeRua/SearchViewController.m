@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    /* [[UIView appearanceWhenContainedIn:[UITabBar class], nil] setTintColor: [UIColor colorWithRed:116.0/255.0 green:159.0/255.0 blue:160.0/255.0 alpha:1]];*/ 
+    
+    self.tabBarItem.selectedImage = [[UIImage imageNamed: @"SearchSelected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    self.tabBarItem.image = [[UIImage imageNamed:@"Search.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 - (void)didReceiveMemoryWarning {

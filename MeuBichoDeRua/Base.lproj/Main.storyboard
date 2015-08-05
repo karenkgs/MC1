@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -981,76 +981,129 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-kz-Tv9">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtT-e0-Zis">
-                                        <rect key="frame" x="82" y="120" width="437" height="80"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtT-e0-Zis">
+                                        <rect key="frame" x="150" y="99" width="300" height="94"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="4JT-ky-oPr"/>
+                                            <constraint firstAttribute="height" constant="94" id="DZ3-A0-hsi"/>
+                                        </constraints>
                                         <string key="text">   Para que o usuário possa inserir animais no banco de dados do aplicativo é necessário que este usuário faça login com sua conta do Facebook. O mesmo vale para inserção de comentários.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-lD-aeL">
-                                        <rect key="frame" x="82" y="192" width="437" height="85"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-lD-aeL">
+                                        <rect key="frame" x="150" y="196" width="300" height="111"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="111" id="Dc1-bZ-XCt"/>
+                                            <constraint firstAttribute="width" constant="300" id="fbu-6Q-ygi"/>
+                                        </constraints>
                                         <string key="text">   Você verá que na TabBar (barra de menus inferior) o ícone de cadsatro ficará desabilitado enquanto seu usuário não estiver logado e ao entrar em uma tela de comentários o app lhe avisará que você não pode comentar.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   Para fazer login com o Facebook basta acessar: Ir para o login na tela de configurações." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntH-cu-L1g">
-                                        <rect key="frame" x="82" y="273" width="456" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Para fazer login com o Facebook basta acessar: Ir para o login na tela de configurações." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntH-cu-L1g">
+                                        <rect key="frame" x="150" y="300" width="300" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="BGj-yy-3UK"/>
+                                            <constraint firstAttribute="height" constant="60" id="RMm-nX-Qaf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   Estas medidas se fazem necessárias para garantir a veracidade e integridade das informações divulgadas pelo aplicativo." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0I-Ea-Huw">
-                                        <rect key="frame" x="82" y="314" width="456" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Estas medidas se fazem necessárias para garantir a veracidade e integridade das informações divulgadas pelo aplicativo." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0I-Ea-Huw">
+                                        <rect key="frame" x="150" y="361" width="300" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="0Hc-LN-5kA"/>
+                                            <constraint firstAttribute="height" constant="59" id="6l1-wZ-fZH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   A equipe no Meu Bicho de Rua deseja a todos os usuários uma ótima interação com nosso aplicativo." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGj-12-b9X">
-                                        <rect key="frame" x="82" y="356" width="437" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   A equipe no Meu Bicho de Rua deseja a todos os usuários uma ótima interação com nosso aplicativo." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGj-12-b9X">
+                                        <rect key="frame" x="150" y="415" width="300" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="FWY-rO-uZj"/>
+                                            <constraint firstAttribute="width" constant="300" id="xUB-c3-Vzg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   Em caso de dúvidas ou sugestões entre em contato consco pelo email:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIs-lj-AvH">
-                                        <rect key="frame" x="82" y="401" width="456" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Em caso de dúvidas ou sugestões entre em contato consco pelo email:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIs-lj-AvH">
+                                        <rect key="frame" x="150" y="466" width="300" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="hPO-Ps-OxF"/>
+                                            <constraint firstAttribute="height" constant="42" id="lYs-GM-nkZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="meubichoderua@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-Aa-Kl1">
-                                        <rect key="frame" x="208" y="439" width="205" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meubichoderua@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-Aa-Kl1">
+                                        <rect key="frame" x="197" y="506" width="205" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="OIo-Ah-nEf"/>
+                                            <constraint firstAttribute="width" constant="205" id="Zg0-ek-QGN"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.2602134613" green="0.63826709189999997" blue="0.63234934939999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpH-7g-Vap">
-                                        <rect key="frame" x="8" y="45" width="584" height="77"/>
+                                        <rect key="frame" x="150" y="4" width="300" height="99"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="77" id="l2t-EI-alq"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="584" id="oOh-jN-bdj"/>
+                                            <constraint firstAttribute="height" constant="99" id="17g-OP-taT"/>
+                                            <constraint firstAttribute="width" constant="300" id="gYE-P5-Hq3"/>
                                         </constraints>
-                                        <string key="text">   Meu Bicho de Rua é um aplicativo de cunho socio-ambiental, onde a comunidade pode contribuir com informações importantes à respeito dos animais de rua de sua cidade ou região.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <string key="text">    Meu Bicho de Rua é um aplicativo de cunho socio-ambiental, onde a comunidade pode contribuir com informações importantes à respeito dos animais de rua de sua cidade ou região.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.92941176469999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="CpH-7g-Vap" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="45" id="GBr-UY-p1Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="CpH-7g-Vap" secondAttribute="trailing" constant="8" id="GWI-Gw-tBu"/>
-                                    <constraint firstAttribute="centerX" secondItem="CpH-7g-Vap" secondAttribute="centerX" id="byO-rs-Nc5"/>
-                                    <constraint firstItem="CpH-7g-Vap" firstAttribute="leading" secondItem="ANC-kz-Tv9" secondAttribute="leading" constant="8" id="gBx-5j-iyb"/>
+                                    <constraint firstItem="O0I-Ea-Huw" firstAttribute="top" secondItem="ntH-cu-L1g" secondAttribute="bottom" constant="1" id="3BC-uZ-s6N"/>
+                                    <constraint firstAttribute="centerX" secondItem="CpH-7g-Vap" secondAttribute="centerX" id="48R-Ge-Ils"/>
+                                    <constraint firstAttribute="centerX" secondItem="6Na-Aa-Kl1" secondAttribute="centerX" id="5IS-UO-Nkp"/>
+                                    <constraint firstAttribute="centerX" secondItem="ntH-cu-L1g" secondAttribute="centerX" id="EYZ-bN-Pgg"/>
+                                    <constraint firstItem="ntH-cu-L1g" firstAttribute="top" secondItem="gtT-e0-Zis" secondAttribute="bottom" constant="107" id="MEA-du-Img"/>
+                                    <constraint firstAttribute="centerX" secondItem="O0I-Ea-Huw" secondAttribute="centerX" id="NJd-UY-jSF"/>
+                                    <constraint firstAttribute="centerX" secondItem="LBm-lD-aeL" secondAttribute="centerX" id="PFY-KV-rfl"/>
+                                    <constraint firstItem="NIs-lj-AvH" firstAttribute="top" secondItem="DGj-12-b9X" secondAttribute="bottom" constant="-4" id="SLg-pU-vSK"/>
+                                    <constraint firstItem="NIs-lj-AvH" firstAttribute="top" secondItem="O0I-Ea-Huw" secondAttribute="bottom" constant="46" id="Yp4-KY-JzB"/>
+                                    <constraint firstAttribute="centerX" secondItem="DGj-12-b9X" secondAttribute="centerX" id="ZNR-3S-WLV"/>
+                                    <constraint firstItem="NIs-lj-AvH" firstAttribute="top" secondItem="DGj-12-b9X" secondAttribute="bottom" constant="-4" id="cOJ-Jb-RsN"/>
+                                    <constraint firstItem="LBm-lD-aeL" firstAttribute="top" secondItem="CpH-7g-Vap" secondAttribute="bottom" constant="64" id="ckQ-q5-Pie"/>
+                                    <constraint firstItem="CpH-7g-Vap" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="4" id="gqM-38-JjI"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Na-Aa-Kl1" secondAttribute="bottom" constant="27" id="iQG-qo-Xar"/>
+                                    <constraint firstItem="gtT-e0-Zis" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="99" id="ia5-Tq-xed"/>
+                                    <constraint firstAttribute="centerX" secondItem="NIs-lj-AvH" secondAttribute="centerX" id="rt4-3r-hav"/>
+                                    <constraint firstAttribute="trailing" secondItem="DGj-12-b9X" secondAttribute="trailing" constant="150" id="vAK-75-pCp"/>
+                                    <constraint firstAttribute="centerX" secondItem="gtT-e0-Zis" secondAttribute="centerX" id="xND-Tw-Bic"/>
+                                    <constraint firstItem="6Na-Aa-Kl1" firstAttribute="top" secondItem="DGj-12-b9X" secondAttribute="bottom" constant="36" id="yOr-wJ-cL3"/>
+                                    <constraint firstItem="O0I-Ea-Huw" firstAttribute="top" secondItem="LBm-lD-aeL" secondAttribute="bottom" constant="54" id="ywI-XF-LxV"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ckQ-q5-Pie"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.21176470589999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ANC-kz-Tv9" secondAttribute="trailing" id="7ja-lK-duN"/>
+                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="top" secondItem="xqG-ai-jPI" secondAttribute="bottom" id="KH4-kj-xRa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ANC-kz-Tv9" secondAttribute="trailing" constant="-16" id="QFl-VJ-yVl"/>
                             <constraint firstItem="ANC-kz-Tv9" firstAttribute="leading" secondItem="617-mR-lj4" secondAttribute="leading" id="VpG-LL-itp"/>
+                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="leading" secondItem="617-mR-lj4" secondAttribute="leadingMargin" constant="-16" id="cUb-LG-2gJ"/>
                             <constraint firstItem="ANC-kz-Tv9" firstAttribute="top" secondItem="xqG-ai-jPI" secondAttribute="bottom" id="iqJ-sc-yYA"/>
                             <constraint firstItem="lBG-Xf-yRv" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="bottom" id="r8U-xf-aBa"/>
+                            <constraint firstItem="lBG-Xf-yRv" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="bottom" id="xeT-lY-0ZO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="btv-JZ-BUY"/>

@@ -964,12 +964,12 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keO-7l-Bnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3882" y="407"/>
+            <point key="canvasLocation" x="-4658" y="47"/>
         </scene>
         <!--Informações:-->
         <scene sceneID="WPQ-oD-UX7">
             <objects>
-                <viewController title="Informações:" id="u32-59-9fw" sceneMemberID="viewController">
+                <viewController title="Informações:" id="u32-59-9fw" customClass="InfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xqG-ai-jPI"/>
                         <viewControllerLayoutGuide type="bottom" id="lBG-Xf-yRv"/>
@@ -1106,11 +1106,24 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                             <constraint firstItem="lBG-Xf-yRv" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="bottom" id="xeT-lY-0ZO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="btv-JZ-BUY"/>
+                    <navigationItem key="navigationItem" id="btv-JZ-BUY">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="7BD-xE-84o">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dAU-v6-fRc">
+                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backClickButton:" destination="u32-59-9fw" eventType="touchUpInside" id="iCK-49-Jhp"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTZ-gd-0Pr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3882" y="1945"/>
+            <point key="canvasLocation" x="-5722" y="-951"/>
         </scene>
         <!--Detalhes-->
         <scene sceneID="VrE-BW-7gN">
@@ -1490,7 +1503,7 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJE-m1-7X2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2220" y="1211"/>
+            <point key="canvasLocation" x="-3076" y="1187"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="hU1-ft-VjG">
@@ -1924,6 +1937,7 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
         <!--Navigation Controller-->
         <scene sceneID="JwP-45-j9o">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wR-w9-l5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vmf-Zq-yZC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kvJ-hU-HDO">
@@ -1935,9 +1949,8 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                         <segue destination="u32-59-9fw" kind="relationship" relationship="rootViewController" id="o1M-Vp-Q7h"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7wR-w9-l5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3882" y="1211"/>
+            <point key="canvasLocation" x="-5682" y="-69"/>
         </scene>
     </scenes>
     <resources>

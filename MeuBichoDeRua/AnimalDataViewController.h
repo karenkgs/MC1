@@ -31,6 +31,6 @@
 - (IBAction)selecionaPorte:(id)sender;
 - (IBAction)selecionaIdade:(id)sender;
 - (IBAction)selecionaSituacao:(id)sender;
-- (void)setImagem: (UIImage *)hue;
+- (void)setImagem: (UIImage *)imagem;
 
 @end

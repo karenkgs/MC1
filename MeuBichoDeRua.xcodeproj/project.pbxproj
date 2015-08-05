@@ -17,6 +17,7 @@
 		9967F3C11AC9DDC800251A56 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967F3BE1AC9DDC800251A56 /* SVProgressHUD.m */; };
 		999EDF171AC1E74100AE247D /* AnimalDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999EDF161AC1E74100AE247D /* AnimalDataViewController.m */; };
 		999EDF1A1AC1FAFE00AE247D /* AnimalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999EDF191AC1FAFE00AE247D /* AnimalViewController.m */; };
+		99B9A5451B729D7B008F7B26 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B9A5441B729D7B008F7B26 /* InfoViewController.m */; };
 		99C0C9B01AC4D4F10077D876 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C0C9AC1AC4D4F10077D876 /* AbstractActionSheetPicker.m */; };
 		99C0C9B11AC4D4F10077D876 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C0C9AE1AC4D4F10077D876 /* SWActionSheet.m */; };
 		99C0C9B41AC4D6C30077D876 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C0C9B21AC4D6C30077D876 /* ActionSheetStringPicker.m */; };
@@ -84,6 +85,8 @@
 		999EDF161AC1E74100AE247D /* AnimalDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AnimalDataViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		999EDF181AC1FAFE00AE247D /* AnimalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalViewController.h; sourceTree = "<group>"; };
 		999EDF191AC1FAFE00AE247D /* AnimalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalViewController.m; sourceTree = "<group>"; };
+		99B9A5431B729D7B008F7B26 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		99B9A5441B729D7B008F7B26 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		99C0C9AB1AC4D2EE0077D876 /* ActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		99C0C9AC1AC4D4F10077D876 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		99C0C9AD1AC4D4F10077D876 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
@@ -330,6 +333,15 @@
 			name = Progress;
 			sourceTree = "<group>";
 		};
+		99B9A5401B729D1D008F7B26 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				99B9A5431B729D7B008F7B26 /* InfoViewController.h */,
+				99B9A5441B729D7B008F7B26 /* InfoViewController.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 		99C0C9A61AC4D2460077D876 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +471,7 @@
 		C2EF00721ABF50F50051C7A2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				99B9A5401B729D1D008F7B26 /* Info */,
 				982E23631ACB294400700E84 /* Settings */,
 				9865F4B91AC8F78E00F05CAC /* Vet */,
 				985496CB1AC8B92500876E6B /* Ong */,
@@ -645,6 +658,7 @@
 				C21D030F1AC73AF400BFAFA4 /* Animal.m in Sources */,
 				99C141951AC102E100E137CA /* SiginDogViewController.m in Sources */,
 				9865F4B51AC8F75100F05CAC /* Vet.m in Sources */,
+				99B9A5451B729D7B008F7B26 /* InfoViewController.m in Sources */,
 				C2B1C58B1AC72F2F006C5630 /* AnimalTableViewCell.m in Sources */,
 				99C0C9B11AC4D4F10077D876 /* SWActionSheet.m in Sources */,
 				C2EF004C1ABF50E20051C7A2 /* main.m in Sources */,

@@ -58,8 +58,8 @@
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
--(void)setImagem:(UIImage*)hue{
-    self.p=hue;
+-(void)setImagem:(UIImage*)imagem{
+    self.p=imagem;
 }
 
 - (void)viewDidLoad {

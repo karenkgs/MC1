@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "LoginViewController.h"
 #import "AnimalViewController.h"
+#import "UsuarioSingleton.h"
 
 @interface SettingsViewController ()
 
@@ -25,11 +26,23 @@
     self.tabBarItem.selectedImage = [[UIImage imageNamed: @"settingsSelected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     self.tabBarItem.image = [[UIImage imageNamed:@"settings.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+
+    if(![UsuarioSingleton sharedInstance].isAuthenticated)
+    {
+        
+        [self.logoutButton setTitle:@"Ir para login" forState:UIControlStateNormal];
+        
+    }
+    else{
+        
+        [self.logoutButton setTitle:@"Logout" forState:UIControlStateNormal];
+    }
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -44,15 +57,5 @@
     [self performSegueWithIdentifier:@"logoutSegue" sender:self];
     
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

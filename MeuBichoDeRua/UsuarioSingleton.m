@@ -35,16 +35,9 @@ static UsuarioSingleton* usuario = nil;
         self.username = @"nome";
         self.userFirstName = @"primeiro";
         self.userLastName = @"ultimo";
+        self.isAuthenticated = false;
     }
     return self;
 }
-
-//+ (NSString *)usuario{
-//    if(!usuario){
-//        usuario = @"teste usuario";
-//    }
-//    return usuario;
-//    
-//}
 
 @end

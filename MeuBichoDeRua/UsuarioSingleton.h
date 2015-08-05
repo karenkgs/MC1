@@ -14,7 +14,7 @@
 @property(nonatomic) NSString *username;
 @property(nonatomic) NSString *userLastName;
 @property(nonatomic) NSString *userFirstName;
-
+@property(nonatomic) BOOL isAuthenticated;
 + (instancetype) sharedInstance;
 
 @end

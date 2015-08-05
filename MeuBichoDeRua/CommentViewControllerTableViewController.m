@@ -60,6 +60,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+}
+- (void)viewDidAppear:(BOOL)animated{
+
+    if(![UsuarioSingleton sharedInstance].isAuthenticated)
+    {
+        self.enviarButton.enabled = false;
+        self.descTextView.editable = false;
+        
+        [[[UIAlertView alloc] initWithTitle:@"Erro"
+                                    message:@"Você precisa estar logado para fazer comentários!"
+                                   delegate:nil
+                          cancelButtonTitle:@"Ok"
+                          otherButtonTitles:nil] show];
+    }
+
+
 }
 
 - (void)objectsWillLoad {

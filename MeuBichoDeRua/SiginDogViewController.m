@@ -8,7 +8,7 @@
 
 #import "SiginDogViewController.h"
 #import "AnimalDataViewController.h"
-
+#import "UsuarioSingleton.h"
 @interface SiginDogViewController ()
 
 @end
@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     
     self.tabBarItem.selectedImage = [[UIImage imageNamed: @"CadastrarSelected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -55,6 +56,7 @@
     
     
 }
+
 
 - (IBAction)takePhoto:(UIButton *)sender {
     

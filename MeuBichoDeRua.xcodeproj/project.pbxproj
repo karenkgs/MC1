@@ -61,6 +61,7 @@
 		C2EF007A1ABF52EC0051C7A2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF00791ABF52EC0051C7A2 /* CloudKit.framework */; };
 		C2EF007C1ABF531D0051C7A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF007B1ABF531D0051C7A2 /* MapKit.framework */; };
 		C2EF007E1ABF53260051C7A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF007D1ABF53260051C7A2 /* CoreLocation.framework */; };
+		C2F762001B6EE63B00EC4A8B /* AnimalTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F761FF1B6EE63B00EC4A8B /* AnimalTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,8 @@
 		C2EF00791ABF52EC0051C7A2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C2EF007B1ABF531D0051C7A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C2EF007D1ABF53260051C7A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C2F761FE1B6EE63B00EC4A8B /* AnimalTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalTabBarController.h; sourceTree = "<group>"; };
+		C2F761FF1B6EE63B00EC4A8B /* AnimalTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +468,7 @@
 				98AF86E51AC9B9BF00975A6B /* Cadastro */,
 				98AF86E61AC9BA0900975A6B /* Busca */,
 				C21D55C91AE40EAE00B57CBF /* Comment */,
+				C2F762011B71388800EC4A8B /* TabBar */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -526,6 +530,15 @@
 				C2EF00771ABF52D20051C7A2 /* FacebookSDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2F762011B71388800EC4A8B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C2F761FE1B6EE63B00EC4A8B /* AnimalTabBarController.h */,
+				C2F761FF1B6EE63B00EC4A8B /* AnimalTabBarController.m */,
+			);
+			name = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +639,7 @@
 				C2B1C5841AC700FC006C5630 /* AnimalMKPointAnnotation.m in Sources */,
 				C23A053F1AC4A266005DB653 /* OngViewController.m in Sources */,
 				C21D03191AC798DE00BFAFA4 /* OngTableViewCell.m in Sources */,
+				C2F762001B6EE63B00EC4A8B /* AnimalTabBarController.m in Sources */,
 				99C0C9B41AC4D6C30077D876 /* ActionSheetStringPicker.m in Sources */,
 				C21D55CC1AE4175200B57CBF /* Comment.m in Sources */,
 				C21D030F1AC73AF400BFAFA4 /* Animal.m in Sources */,
@@ -755,6 +769,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -772,6 +787,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -779,6 +795,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

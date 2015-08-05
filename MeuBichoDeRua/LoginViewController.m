@@ -93,7 +93,7 @@
     singleton.user = [user objectForKey:@"email"];
     singleton.userFirstName = user.first_name;
     singleton.userLastName = user.last_name;
-    
+    singleton.isAuthenticated = TRUE;
     //[UsuarioSingleton sharedInstance].user = [user objectForKey:@"email"];
     //[UsuarioSingleton sharedInstance].username = [user.name];
     
@@ -102,6 +102,7 @@
     self.userNameLabel.text = user.name;
     self.emailLabel.text = [user objectForKey:@"email"];
     [self performSegueWithIdentifier:@"showMap" sender:self];
+    
     
 }
 
@@ -120,6 +121,10 @@
 
 -(void)logout{
     [FBSession.activeSession closeAndClearTokenInformation];
+     [UsuarioSingleton sharedInstance].isAuthenticated = FALSE;
+}
+- (IBAction)mapaButtonClick:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"vaiMapa" sender:self];
 }
 
 @end

@@ -16,8 +16,9 @@
 @implementation InfoViewController
 
 - (IBAction)backClickButton:(id)sender {
-    //[self.navigationController popToViewController:(UIViewController*)SettingsViewController animated:YES];
-    //[self.navigationController popViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self.navigationController popViewControllerAnimated:TRUE];
 }
 
 - (void)viewDidLoad {

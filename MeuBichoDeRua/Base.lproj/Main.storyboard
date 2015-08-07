@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -978,7 +978,7 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-kz-Tv9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-kz-Tv9">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtT-e0-Zis">
@@ -1067,28 +1067,31 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="O0I-Ea-Huw" firstAttribute="top" secondItem="ntH-cu-L1g" secondAttribute="bottom" constant="1" id="3BC-uZ-s6N"/>
-                                    <constraint firstAttribute="centerX" secondItem="CpH-7g-Vap" secondAttribute="centerX" id="48R-Ge-Ils"/>
-                                    <constraint firstAttribute="centerX" secondItem="6Na-Aa-Kl1" secondAttribute="centerX" id="5IS-UO-Nkp"/>
-                                    <constraint firstAttribute="centerX" secondItem="ntH-cu-L1g" secondAttribute="centerX" id="EYZ-bN-Pgg"/>
+                                    <constraint firstAttribute="centerX" secondItem="CpH-7g-Vap" secondAttribute="centerX" id="6M0-m1-3GS"/>
+                                    <constraint firstAttribute="centerX" secondItem="gtT-e0-Zis" secondAttribute="centerX" id="ARE-t3-4wX"/>
+                                    <constraint firstItem="gtT-e0-Zis" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="99" id="Cp7-AZ-Pa2"/>
+                                    <constraint firstAttribute="centerX" secondItem="ntH-cu-L1g" secondAttribute="centerX" id="Eec-kt-kKz"/>
+                                    <constraint firstAttribute="centerX" secondItem="NIs-lj-AvH" secondAttribute="centerX" id="K6R-Fo-2cJ"/>
                                     <constraint firstItem="ntH-cu-L1g" firstAttribute="top" secondItem="gtT-e0-Zis" secondAttribute="bottom" constant="107" id="MEA-du-Img"/>
-                                    <constraint firstAttribute="centerX" secondItem="O0I-Ea-Huw" secondAttribute="centerX" id="NJd-UY-jSF"/>
-                                    <constraint firstAttribute="centerX" secondItem="LBm-lD-aeL" secondAttribute="centerX" id="PFY-KV-rfl"/>
                                     <constraint firstItem="NIs-lj-AvH" firstAttribute="top" secondItem="DGj-12-b9X" secondAttribute="bottom" constant="-4" id="SLg-pU-vSK"/>
+                                    <constraint firstAttribute="centerX" secondItem="6Na-Aa-Kl1" secondAttribute="centerX" id="V43-CL-Gts"/>
+                                    <constraint firstItem="CpH-7g-Vap" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="4" id="WRD-JU-6dg"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Na-Aa-Kl1" secondAttribute="bottom" constant="20" id="Xdl-F5-ajZ"/>
+                                    <constraint firstAttribute="centerX" secondItem="LBm-lD-aeL" secondAttribute="centerX" id="XxE-37-WB4"/>
                                     <constraint firstItem="NIs-lj-AvH" firstAttribute="top" secondItem="O0I-Ea-Huw" secondAttribute="bottom" constant="46" id="Yp4-KY-JzB"/>
-                                    <constraint firstAttribute="centerX" secondItem="DGj-12-b9X" secondAttribute="centerX" id="ZNR-3S-WLV"/>
                                     <constraint firstItem="NIs-lj-AvH" firstAttribute="top" secondItem="DGj-12-b9X" secondAttribute="bottom" constant="-4" id="cOJ-Jb-RsN"/>
                                     <constraint firstItem="LBm-lD-aeL" firstAttribute="top" secondItem="CpH-7g-Vap" secondAttribute="bottom" constant="64" id="ckQ-q5-Pie"/>
-                                    <constraint firstItem="CpH-7g-Vap" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="4" id="gqM-38-JjI"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Na-Aa-Kl1" secondAttribute="bottom" constant="27" id="iQG-qo-Xar"/>
-                                    <constraint firstItem="gtT-e0-Zis" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="99" id="ia5-Tq-xed"/>
-                                    <constraint firstAttribute="centerX" secondItem="NIs-lj-AvH" secondAttribute="centerX" id="rt4-3r-hav"/>
-                                    <constraint firstAttribute="trailing" secondItem="DGj-12-b9X" secondAttribute="trailing" constant="150" id="vAK-75-pCp"/>
-                                    <constraint firstAttribute="centerX" secondItem="gtT-e0-Zis" secondAttribute="centerX" id="xND-Tw-Bic"/>
+                                    <constraint firstItem="CpH-7g-Vap" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="top" constant="4" id="fog-4L-YOc"/>
+                                    <constraint firstAttribute="centerX" secondItem="DGj-12-b9X" secondAttribute="centerX" id="ohA-LU-Vjm"/>
+                                    <constraint firstAttribute="centerX" secondItem="CpH-7g-Vap" secondAttribute="centerX" id="r2f-8t-lY9"/>
+                                    <constraint firstAttribute="centerX" secondItem="O0I-Ea-Huw" secondAttribute="centerX" id="tCv-H3-mGb"/>
                                     <constraint firstItem="6Na-Aa-Kl1" firstAttribute="top" secondItem="DGj-12-b9X" secondAttribute="bottom" constant="36" id="yOr-wJ-cL3"/>
                                     <constraint firstItem="O0I-Ea-Huw" firstAttribute="top" secondItem="LBm-lD-aeL" secondAttribute="bottom" constant="54" id="ywI-XF-LxV"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="fog-4L-YOc"/>
+                                        <exclude reference="r2f-8t-lY9"/>
                                         <exclude reference="ckQ-q5-Pie"/>
                                     </mask>
                                 </variation>
@@ -1096,28 +1099,17 @@ The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.21176470589999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ANC-kz-Tv9" secondAttribute="trailing" id="7ja-lK-duN"/>
-                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="top" secondItem="xqG-ai-jPI" secondAttribute="bottom" id="KH4-kj-xRa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ANC-kz-Tv9" secondAttribute="trailing" constant="-16" id="QFl-VJ-yVl"/>
-                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="leading" secondItem="617-mR-lj4" secondAttribute="leading" id="VpG-LL-itp"/>
-                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="leading" secondItem="617-mR-lj4" secondAttribute="leadingMargin" constant="-16" id="cUb-LG-2gJ"/>
-                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="top" secondItem="xqG-ai-jPI" secondAttribute="bottom" id="iqJ-sc-yYA"/>
-                            <constraint firstItem="lBG-Xf-yRv" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="bottom" id="r8U-xf-aBa"/>
-                            <constraint firstItem="lBG-Xf-yRv" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="bottom" id="xeT-lY-0ZO"/>
+                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="leading" secondItem="617-mR-lj4" secondAttribute="leadingMargin" constant="-16" id="2Yf-et-JVV"/>
+                            <constraint firstItem="lBG-Xf-yRv" firstAttribute="top" secondItem="ANC-kz-Tv9" secondAttribute="bottom" id="71w-4d-gTE"/>
+                            <constraint firstItem="ANC-kz-Tv9" firstAttribute="top" secondItem="xqG-ai-jPI" secondAttribute="bottom" id="YzR-Dy-7nH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ANC-kz-Tv9" secondAttribute="trailing" constant="-16" id="rwH-fu-aBn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="btv-JZ-BUY">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="7BD-xE-84o">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dAU-v6-fRc">
-                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Voltar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backClickButton:" destination="u32-59-9fw" eventType="touchUpInside" id="iCK-49-Jhp"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="wes-K2-0fV">
+                            <connections>
+                                <action selector="backClickButton:" destination="u32-59-9fw" id="QQg-2A-ywv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
